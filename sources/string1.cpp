@@ -14,6 +14,13 @@ string_t::string_t(const char *ch1) {
 	for(unsigned int i=0; i<size_; i++)
 		ch[i]=ch1[i];
 }
+string_t::string_t(string_t const &other) {
+  if (this != &other) {
+    size_ = other.size_;
+    ch = new char[size_ + 1];
+    for (unsigned int i = 0; i < size_; i++) ch[i] = other.ch[i];
+  }
+}
 string_t& string_t::operator =(string_t const &other) {
 	if(this != &other) {
 		size_=other.size_;
