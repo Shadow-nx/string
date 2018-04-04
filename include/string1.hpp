@@ -7,6 +7,7 @@ class string_t {
 	public:
 		string_t();
 		string_t(const char *ch);
+	        string_t(string_t const &other);
 		string_t&  operator =(string_t const &other);
 		~string_t();
 		char* getCh();
